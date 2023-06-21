@@ -1,0 +1,64 @@
+create project and virtual env:
+	>mkdir build-django
+	>cd build-django
+	>python -m venv tutorial-env
+activate the venv:
+	>tutorial-env\Scripts\activate
+install django on venv:
+	>pip install django
+start the project:
+	>django-admin startproject capstone
+	
+configure mysql database:
+	install mysql in windows
+	configure it
+	run the commands:\
+	Create database mydatabase;
+	pip3 install mysqlclient
+	
+enable the database in settings django:
+DATABASES = {   
+    'default': {   
+        'ENGINE': 'django.db.backends.mysql',   
+        'NAME': 'mydatabase',   
+        'USER': 'root',   
+        'PASSWORD': '',   
+        'HOST': '127.0.0.1',   
+        'PORT': '3306',   
+        'OPTIONS': {   
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"   
+        }   
+    }   
+} 
+
+>python manage.py migrate 
+
+
+-install django rest framework:
+	pip install djangorestframework
+	
+configure it in settings.py installed apps:
+add : rest_framework
+	
+	
+
+
+
+
+
+
+
+another way to run virtual environment:
+pipenv install django
+pipenv shell
+
+
+
+
+if you want to upload code and env to github:
+	git init
+	git config --global core.autocrlf false
+	git add .
+	git commit -m "my first commit"
+	git branch -M main
+	git remote add origin https://github.com/daowdalan/assignment-proje
